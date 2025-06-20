@@ -1,0 +1,12 @@
+{
+  "header": {
+    "navigation": {
+      "home": "Home",
+      "downloadCenter": "Download Center",
+      "initiatives": "Initiatives",
+      "servicesAndSolutions": "Services & Solutions",
+      "ourScope": "Our Scope",
+      "ourVision": "Our Vision"
+    }
+  }
+}
