@@ -1,16 +1,14 @@
 import {Component} from '@angular/core';
-import {HeroComponent} from '@sections/hero/hero.component';
-import {HeaderComponent} from '@core/components/header/header.component';
-import {TranslatePipe} from '@ngx-translate/core';
+import {MainComponents} from '@app/app-utils';
 
 @Component({
   selector: 'app-root',
-  imports: [HeroComponent, HeaderComponent, TranslatePipe],
-  templateUrl: './app.component.html',
+  imports: [
+    ...MainComponents
+  ],
   standalone: true,
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
-  title = 'ssd-task';
 }

@@ -1,0 +1,87 @@
+{
+  "services": {
+    "categories": [
+      "services.categories.all",
+      "services.categories.digital",
+      "services.categories.operations",
+      "services.categories.experience",
+      "services.categories.training"
+    ],
+    "items": [
+      {
+        "icon": "services-infrastructure",
+        "titleKey": "services.items.infrastructure.title",
+        "descriptionKey": "services.items.infrastructure.description",
+        "categoryKey": "services.categories.digital"
+      },
+      {
+        "icon": "services-hosting",
+        "titleKey": "services.items.hosting.title",
+        "descriptionKey": "services.items.hosting.description",
+        "categoryKey": "services.categories.digital"
+      },
+      {
+        "icon": "services-optimize",
+        "titleKey": "services.items.optimize.title",
+        "descriptionKey": "services.items.optimize.description",
+        "categoryKey": "services.categories.operations"
+      },
+      {
+        "icon": "services-connect",
+        "titleKey": "services.items.connect.title",
+        "descriptionKey": "services.items.connect.description",
+        "categoryKey": "services.categories.operations"
+      },
+      {
+        "icon": "services-colocate",
+        "titleKey": "services.items.colocate.title",
+        "descriptionKey": "services.items.colocate.description",
+        "categoryKey": "services.categories.digital"
+      },
+      {
+        "icon": "services-insight",
+        "titleKey": "services.items.insight.title",
+        "descriptionKey": "services.items.insight.description",
+        "categoryKey": "services.categories.experience"
+      },
+      {
+        "icon": "services-license",
+        "titleKey": "services.items.license.title",
+        "descriptionKey": "services.items.license.description",
+        "categoryKey": "services.categories.experience"
+      },
+      {
+        "icon": "services-assess",
+        "titleKey": "services.items.assess.title",
+        "descriptionKey": "services.items.assess.description",
+        "categoryKey": "services.categories.training"
+      }
+    ]
+  },
+  "scope": {
+    "titleKey": "scope.title",
+    "descriptionKey": "scope.description",
+    "items": [
+      {
+        "icon": "slide-1",
+        "titleKey": "scope.items.g2g.title",
+        "descriptionKey": "scope.items.g2g.description"
+      },
+      {
+        "icon": "slide-2",
+        "titleKey": "scope.items.g2c.title",
+        "descriptionKey": "scope.items.g2c.description"
+      },
+      {
+        "icon": "slide-3",
+        "titleKey": "scope.items.cybersecurity.title",
+        "descriptionKey": "scope.items.cybersecurity.description"
+      },
+      {
+        "icon": "slide-4",
+        "titleKey": "scope.items.ai.title",
+        "descriptionKey": "scope.items.ai.description"
+      }
+    ]
+  }
+}
