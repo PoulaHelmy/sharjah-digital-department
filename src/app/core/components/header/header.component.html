@@ -1,0 +1,109 @@
+<!--<header class="header">-->
+<!--  <nav class="nav d-flex justify-content-between align-items-center">-->
+<!--    <div class="nav__brand d-flex gap-3 align-items-start">-->
+<!--      <img alt="Sharjah Digital Department" class="nav__logo"-->
+<!--           src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg">-->
+<!--      <span class="nav__beta">Beta</span>-->
+<!--    </div>-->
+
+<!--    <ul class="nav__menu list-unstyled m-0 p-0 d-flex gap-3">-->
+<!--      @for (navItem of headerNavData; track i; let i = $index) {-->
+<!--        <li class="nav__item">-->
+<!--          &lt;!&ndash;          nav__link&#45;&#45;active&ndash;&gt;-->
+<!--          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">-->
+<!--            {{ navItem.key | translate }}-->
+<!--          </a>-->
+<!--        </li>-->
+<!--      }-->
+<!--    </ul>-->
+
+<!--    <div class="nav__actions">-->
+<!--      <app-icon [iconClass]="'text-sub-head d-flex align-items-start'" [iconName]="'icon-accessibility'"/>-->
+<!--      <span class="nav__divider"></span>-->
+<!--      <button class="nav__language btn">العربية</button>-->
+<!--    </div>-->
+
+
+<!--    <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"-->
+<!--            class="navbar-toggler"-->
+<!--            data-target="#navbarToggleExternalContent" data-toggle="collapse" type="button">-->
+<!--      <app-icon [iconName]="'icon-bars'"/>-->
+<!--    </button>-->
+<!--  </nav>-->
+<!--</header>-->
+
+
+<header class="header">
+  <nav class="nav d-flex justify-content-between align-items-center px-3 py-2">
+    <!-- Logo + Beta -->
+    <div class="nav__brand d-flex gap-2 align-items-start">
+      <img
+        alt="Sharjah Digital Department"
+        class="nav__logo"
+        src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg"
+      />
+      <span class="nav__beta badge">Beta</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="nav__menu list-unstyled m-0 p-0 d-none d-lg-flex gap-3 align-items-center">
+      @for (navItem of headerNavData; track i; let i = $index) {
+        <li class="nav__item">
+          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
+            {{ navItem.key | translate }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- Actions & Language -->
+    <div class="nav__actions d-none d-lg-flex align-items-center">
+      <app-icon
+        [iconClass]="'text-sub-head d-flex align-items-center'"
+        [iconName]="'icon-accessibility'"
+      />
+      <span class="nav__divider"></span>
+      <button class="nav__language btn btn-sm">العربية</button>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle navigation"
+      class="navbar-toggler d-lg-none"
+      type="button"
+    >
+      <app-icon [iconName]="isMobileMenuOpen ? 'icon-close' : 'icon-bars'"></app-icon>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div [class.open]="isMobileMenuOpen" class="mobile-menu bg-white d-lg-none">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <div class="nav__brand d-flex gap-2 align-items-start">
+        <img
+          alt="Sharjah Digital Department"
+          class="nav__logo"
+          src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg"
+        />
+        <span class="nav__beta badge">Beta</span>
+      </div>
+      <div>
+        <button class="nav__language fw-bolder btn">العربية</button>
+        <button (click)="toggleMobileMenu()" class="btn">
+          <span class="fs-2">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <ul class="list-unstyled mt-3 px-3">
+      @for (navItem of headerNavData; track i; let i = $index) {
+        <li class="nav__item border-bottom py-4">
+          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
+            {{ navItem.key | translate }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</header>
