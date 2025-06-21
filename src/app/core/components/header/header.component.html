@@ -1,101 +1,66 @@
-<!--<header class="header">-->
-<!--  <nav class="nav d-flex justify-content-between align-items-center">-->
-<!--    <div class="nav__brand d-flex gap-3 align-items-start">-->
-<!--      <img alt="Sharjah Digital Department" class="nav__logo"-->
-<!--           src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg">-->
-<!--      <span class="nav__beta">Beta</span>-->
-<!--    </div>-->
-
-<!--    <ul class="nav__menu list-unstyled m-0 p-0 d-flex gap-3">-->
-<!--      @for (navItem of headerNavData; track i; let i = $index) {-->
-<!--        <li class="nav__item">-->
-<!--          &lt;!&ndash;          nav__link&#45;&#45;active&ndash;&gt;-->
-<!--          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">-->
-<!--            {{ navItem.key | translate }}-->
-<!--          </a>-->
-<!--        </li>-->
-<!--      }-->
-<!--    </ul>-->
-
-<!--    <div class="nav__actions">-->
-<!--      <app-icon [iconClass]="'text-sub-head d-flex align-items-start'" [iconName]="'icon-accessibility'"/>-->
-<!--      <span class="nav__divider"></span>-->
-<!--      <button class="nav__language btn">العربية</button>-->
-<!--    </div>-->
-
-
-<!--    <button aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"-->
-<!--            class="navbar-toggler"-->
-<!--            data-target="#navbarToggleExternalContent" data-toggle="collapse" type="button">-->
-<!--      <app-icon [iconName]="'icon-bars'"/>-->
-<!--    </button>-->
-<!--  </nav>-->
-<!--</header>-->
-
-<header [class.glassmorphism]="isScrolled" class="header my-4">
-  <nav class="nav d-flex justify-content-between align-items-center px-4 py-2">
-    <!-- Logo + Beta -->
-    <div class="nav__brand d-flex gap-2 align-items-start">
+<header [class.header--glass]="isScrolled" class="header my-4">
+  <nav class="header__nav">
+    <!-- Brand -->
+    <div class="header__brand">
       <img
         alt="Sharjah Digital Department"
-        class="nav__logo"
+        class="header__brand-logo"
         src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg"
       />
-      <span class="nav__beta badge">Beta</span>
+      <span class="header__brand-beta badge">Beta</span>
     </div>
 
-    <!-- Desktop Menu -->
-    <ul class="nav__menu list-unstyled m-0 p-0 d-none d-lg-flex gap-3 align-items-center">
+    <!-- Desktop Navigation -->
+    <ul class="header__menu d-none d-lg-flex align-items-center">
       @for (navItem of headerNavData; track i; let i = $index) {
-        <li class="nav__item">
-          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
+        <li class="header__item">
+          <a class="header__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
             {{ navItem.key | translate }}
           </a>
         </li>
       }
     </ul>
 
-    <!-- Actions & Language -->
-    <div class="nav__actions d-none d-lg-flex align-items-center">
-      <span class="text-sub-head d-flex align-items-center icon-accessibility"></span>
-      <span class="nav__divider"></span>
-      <button (click)="changeLang()" class="nav__language btn btn-sm">{{ 'lang' | translate }}</button>
+    <!-- Desktop Actions -->
+    <div class="header__actions d-none d-lg-flex">
+      <span class="icon-accessibility"></span>
+      <span class="header__actions-divider"></span>
+      <button (click)="changeLang()" class="header__actions-language btn btn-sm">
+        {{ 'lang' | translate }}
+      </button>
     </div>
 
     <!-- Mobile Toggle -->
     <button
       (click)="toggleMobileMenu()"
       aria-label="Toggle navigation"
-      class="navbar-toggler d-lg-none"
-      type="button"
+      class="header__toggle d-lg-none"
     >
-      <span [class]="isMobileMenuOpen ? 'icon-close' : 'icon-bars'"></span>
+      <span [class]="isMobileMenuOpen ? 'icon-close' : 'icon-bars' + ' text-20' "></span>
     </button>
   </nav>
 
   <!-- Mobile Menu -->
-  <div [class.open]="isMobileMenuOpen" class="mobile-menu bg-white d-lg-none">
+  <div [class.header__mobile-menu--open]="isMobileMenuOpen" class="header__mobile-menu d-lg-none">
     <div class="d-flex justify-content-between align-items-center p-3">
-      <div class="nav__brand d-flex gap-2 align-items-start">
+      <div class="header__brand">
         <img
           alt="Sharjah Digital Department"
-          class="nav__logo"
+          class="header__brand-logo"
           src="assets/images/hero-section/Logo2x.png"
         />
-        <span class="nav__beta badge">Beta</span>
+        <span class="header__brand-beta badge">Beta</span>
       </div>
       <div>
-        <button (click)="changeLang()" class="nav__language fw-bolder btn">{{ 'lang' | translate }}</button>
-        <button (click)="toggleMobileMenu()" class="btn">
-          <span class="fs-2">&times;</span>
-        </button>
+        <button (click)="changeLang()" class="btn fw-bold">{{ 'lang' | translate }}</button>
+        <button (click)="toggleMobileMenu()" class="btn fs-3">&times;</button>
       </div>
     </div>
 
-    <ul class="list-unstyled mt-3 px-3">
+    <ul>
       @for (navItem of headerNavData; track i; let i = $index) {
-        <li class="nav__item border-bottom py-4">
-          <a class="nav__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
+        <li>
+          <a class="header__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
             {{ navItem.key | translate }}
           </a>
         </li>
