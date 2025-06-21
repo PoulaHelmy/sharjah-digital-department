@@ -1,0 +1,122 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__item {
+    font-size: var(--font-x-small);
+    font-weight: 500;
+    color: var(--bs-gray);
+    background: var(--bs-base-gray);
+    border-radius: var(--corner-4);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.23s ease-in-out;
+    margin: 0;
+
+    &--selected {
+      background: var(--bs-green);
+      color: var(--bs-white);
+    }
+
+    &:hover {
+      background: var(--bs-green);
+      color: var(--bs-white);
+      opacity: 0.6;
+    }
+  }
+}
+
+
+.services {
+  &__container {
+    row-gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    border: 1px solid var(--bs-gray);
+    border-radius: var(--corner-5);
+    padding: 2.375rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background: var(--bs-white);
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h5 {
+        font-weight: 800;
+        color: var(--bs-dark-gray);
+        margin: 0;
+      }
+    }
+
+    &__description {
+      color: var(--bs-gray);
+      font-size: var(--font-x-small);
+      text-align: start;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+      background: var(--bs-dark-gray);
+
+      .services__item__description,
+      .services__item__header h5 {
+        color: var(--bs-white);
+      }
+
+      span::before {
+        color: var(--bs-white);
+      }
+    }
+  }
+}
+
+.view-more {
+  background: var(--bs-light-gray);
+  color: var(--bs-gray);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  .icon-plus {
+    margin-right: 0.5rem;
+  }
+}
+
+
+@include media-breakpoint-down(lg) {
+  .categories {
+    gap: 0.6rem;
+  }
+  .services {
+    &__item {
+      padding: 1.5rem 1rem;
+
+      &__header {
+        h5 {
+          font-size: var(--font-18);
+        }
+      }
+    }
+  }
+}

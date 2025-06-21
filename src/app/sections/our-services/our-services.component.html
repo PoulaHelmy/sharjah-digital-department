@@ -1,0 +1,73 @@
+<!--<section class="our-services text-center">-->
+<!--  <h2 class="section__title mb-4">{{ 'services.sectionTitle' | translate }}</h2>-->
+<!--  <h3 class="section__subtitle mb-4">{{ 'services.title' | translate }}</h3>-->
+<!--  <div class="categories__container">-->
+<!--    @for (category of categories; track category.id) {-->
+<!--      <p role="button" class="category__item"-->
+<!--         [class.selected]="selectedCategory?.id === category.id"-->
+<!--         (click)="selectCategory(category)">-->
+<!--        {{ category.value | translate }}-->
+<!--      </p>-->
+<!--    }-->
+<!--  </div>-->
+<!--  <div class="services__container row gy-4 my-4 justify-content-center">-->
+<!--    @for (service of services; track service.titleKey) {-->
+<!--      <div class="col-6 col-md-4 col-lg-3">-->
+<!--        <div class="service-item">-->
+<!--          <div class="data">-->
+<!--            <h5>{{ service.titleKey | translate }}</h5>-->
+<!--            <span [class]="'icon-'+service.icon"></span>-->
+<!--          </div>-->
+<!--          <p class="description d-none d-md-block">-->
+<!--            {{ service.descriptionKey | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    }-->
+<!--  </div>-->
+<!--</section>-->
+<!--<div class="text-center d-flex justify-content-center mt-5">-->
+<!--  <p class="view-more">-->
+<!--    <span class="icon-plus"></span>-->
+<!--    <span class="mx-2">{{ 'services.view_more' | translate }}</span>-->
+<!--  </p>-->
+<!--</div>-->
+
+<section class="our-services text-center">
+  <h2 class="section__title">{{ 'services.sectionTitle' | translate }}</h2>
+  <h3 class="section__subtitle">{{ 'services.title' | translate }}</h3>
+
+  <div class="categories">
+    @for (category of categories; track category.id) {
+      <p role="button"
+         class="categories__item"
+         [class.categories__item--selected]="selectedCategory?.id === category.id"
+         (click)="selectCategory(category)">
+        {{ category.value | translate }}
+      </p>
+    }
+  </div>
+
+  <div class="services__container row">
+    @for (service of services; track service.titleKey) {
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="services__item">
+          <div class="services__item__header">
+            <h5>{{ service.titleKey | translate }}</h5>
+            <span [class]="'icon-' + service.icon"></span>
+          </div>
+          <p class="services__item__description d-none d-md-block">
+            {{ service.descriptionKey | translate }}
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<div class="text-center d-flex justify-content-center mt-5">
+  <p class="view-more">
+    <span class="icon-plus"></span>
+    <span>{{ 'services.view_more' | translate }}</span>
+  </p>
+</div>

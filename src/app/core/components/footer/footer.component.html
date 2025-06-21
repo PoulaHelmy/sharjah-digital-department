@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__top">
+      <div class="footer__logo">
+        <img alt="Government of Sharjah - Sharjah Digital Department" src="assets/images/hero-section/Logo2x.png">
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          @for (icon of headerNavData; track icon) {
+            <li>
+              <a
+                [title]="icon.key | translate"
+                [href]="icon.route"
+              >
+                {{ icon.key | translate }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copy">
+        {{ 'footer.copyright' | translate }}
+      </div>
+      <div class="footer__social">
+        <span class="footer__label">{{ 'footer.followUs' | translate }}</span>
+        @for (icon of footerLinks; track icon) {
+          <a [title]="icon.key | translate" [href]="icon.route">
+            <span [class]="icon.icon"></span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

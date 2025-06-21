@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../public/icons-font/style.css';
+@import '../public/assets/styles/basics';
+@import '../public/assets/styles/components';
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: AvenirArabic-SharjahGovt-Rg, sans-serif;
+}

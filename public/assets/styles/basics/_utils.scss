@@ -1,0 +1,32 @@
+.truncate-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.section__title {
+  font-size: var(--font-s-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--bs-gray);
+  line-height: 21.6px;
+  letter-spacing: 0.4px;
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  font-weight: 800;
+  color: var(--bs-dark-gray);
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
+
+.section__description {
+  font-weight: 400;
+  color: var(--bs-gray);
+  line-height: 20px;
+  letter-spacing: 0;
+}

@@ -1,0 +1,28 @@
+<section class="download-center">
+  <div class="download-center__header">
+    <h2 class="section__title">{{ 'downloadCenter.sectionTitle' | translate }}</h2>
+    <h3 class="section__subtitle">{{ 'downloadCenter.title' | translate }}</h3>
+  </div>
+
+  <div class="download-center__files">
+    @for (file of files; track file.id) {
+      <div class="download-center__file">
+        <div class="download-center__info">
+          <p class="download-center__info-title">
+            <span class="icon-pdf-gray h3"></span>
+            <span>{{ file.titleKey | translate }}</span>
+          </p>
+          <p class="download-center__info-desc">{{ file.descriptionKey | translate }}</p>
+        </div>
+
+        <div class="download-center__download">
+          <p class="download-center__download-meta">{{ file.date | translate }}</p>
+          <p class="download-center__download-action">
+            <span class="icon-pdf-greeen text-20"></span>
+            <span>{{ 'downloadCenter.download' | translate }}</span>
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
