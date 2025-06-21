@@ -1,42 +1,101 @@
-// 1. Import required Bootstrap files
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
-
-.file-data {
-  border: 1px solid #AAB0BC4D;
-  border-radius: var(--corner-3);
-  padding: 20px;
-  background: var(--color-white);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); // smooth transition
-  transform: translateY(0);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0); // no shadow by default
-
-  &:hover {
-    transform: translateY(-6px); // slight lift on hover
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); // soft shadow
+.download-center {
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
   }
-}
 
-.download-part {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  &__files {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.download {
-  cursor: pointer;
-}
+  &__file {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid rgba(170, 176, 188, 0.3);
+    border-radius: var(--corner-3);
+    background: var(--color-white);
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
-@include media-breakpoint-down(md) {
-  .download-part {
-    flex-flow: column;
-    align-items: end;
-    width: 100%;
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
 
-    .download {
+    @include media-breakpoint-down(md) {
+      gap: 1rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: start;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 1rem 0 0;
+      font-weight: bold;
+      color: var(--bs-dark-gray);
+    }
+
+    &-desc {
+      font-size: 1rem;
+      color: var(--bs-gray);
+      margin: 0;
+    }
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-meta {
+      font-size: 1rem;
+      color: var(--bs-gray);
+      margin: 0;
+    }
+
+    &-action {
+      cursor: pointer;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      color: var(--bs-green);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+
+      app-icon {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__download {
+      flex-direction: column;
+      align-items: flex-end;
       width: 100%;
+
+      &-action {
+        width: 100%;
+      }
     }
   }
 }
