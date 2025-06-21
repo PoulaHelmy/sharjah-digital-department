@@ -28,7 +28,7 @@
         <span class="footer__label">{{ 'footer.followUs' | translate }}</span>
         @for (icon of footerLinks; track icon) {
           <a [title]="icon.key | translate" [href]="icon.route">
-            <app-icon [iconName]="icon.icon || ''"/>
+            <span [class]="icon.icon"></span>
           </a>
         }
       </div>

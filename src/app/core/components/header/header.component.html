@@ -57,10 +57,7 @@
 
     <!-- Actions & Language -->
     <div class="nav__actions d-none d-lg-flex align-items-center">
-      <app-icon
-        [iconClass]="'text-sub-head d-flex align-items-center'"
-        [iconName]="'icon-accessibility'"
-      />
+      <span class="text-sub-head d-flex align-items-center icon-accessibility"></span>
       <span class="nav__divider"></span>
       <button (click)="changeLang()" class="nav__language btn btn-sm">{{ 'lang' | translate }}</button>
     </div>
@@ -72,7 +69,7 @@
       class="navbar-toggler d-lg-none"
       type="button"
     >
-      <app-icon [iconName]="isMobileMenuOpen ? 'icon-close' : 'icon-bars'"></app-icon>
+      <span [class]="isMobileMenuOpen ? 'icon-close' : 'icon-bars'"></span>
     </button>
   </nav>
 

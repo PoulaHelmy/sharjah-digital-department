@@ -1,14 +1,12 @@
 import {Component, HostListener, inject} from '@angular/core';
 import {Arabic, English, HeaderNavData} from '@core/constants';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
-import {IconComponent} from '@shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    TranslatePipe,
-    IconComponent
+    TranslatePipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
