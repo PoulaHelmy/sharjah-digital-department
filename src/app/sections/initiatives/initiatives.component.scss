@@ -1,126 +1,105 @@
-// Import Bootstrap variables to use them in our custom styles
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/variables";
 
-
-.initiatives-section {
+.initiatives {
   background-color: var(--bs-light-gray);
   padding: 2.5rem;
   border-radius: var(--corner-5);
 
-  .section-subtitle {
-    color: $gray-600;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+  &__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
   }
 
-  .section-title {
-    font-weight: 700;
-    color: var(--bs-dark-gray-2);
-  }
-}
+  &__accordion {
+    --bs-accordion-border-width: 0;
 
-// Custom styling for the Bootstrap accordion
-.accordion {
-  // Remove the default outer border of the accordion
-  --bs-accordion-border-width: 0;
+    .accordion-item {
+      border-bottom: 1px solid var(--bs-light-gray) !important;
+      background-color: transparent;
 
-  .accordion-item {
-    border-bottom: 1px solid var(--bs-light-gray) !important;
-    background-color: transparent;
+      &:first-of-type {
+        border-top: 1px solid var(--bs-light-gray) !important;
+      }
+    }
 
-    &:first-of-type {
-      border-top: 1px solid var(--bs-light-gray) !important;
+    .accordion-header {
+      .accordion-button {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--bs-dark-gray-2);
+        padding: 1.5rem 1rem;
+        background-color: transparent;
+
+        &.collapsed {
+          background-color: transparent;
+        }
+
+        &:not(.collapsed) {
+          box-shadow: none;
+          color: var(--bs-dark-gray);
+        }
+
+        &:focus {
+          box-shadow: none;
+          border-color: rgba(0, 0, 0, 0.125);
+        }
+
+        &::after {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          background-repeat: no-repeat;
+          background-size: 1.5rem;
+          margin-left: auto;
+          transition: transform 0.2s ease-in-out;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23343F52'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        &:not(.collapsed)::after {
+          transform: rotate(-180deg);
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23343F52'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-button__number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 35px;
+          height: 35px;
+          margin-right: 1rem;
+          border-radius: 50%;
+          font-weight: 700;
+          font-size: 14px;
+          color: var(--bs-dark-gray);
+          background: var(--bs-white);
+          border: 1px solid #CECECE;
+        }
+      }
+    }
+
+    .accordion-body {
+      padding: 1rem 1rem 3rem;
+      color: var(--bs-dark-gray-3);
+    }
+
+    &__divider {
+      border-top: 1px solid var(--bs-gray);
+      margin: 0;
     }
   }
 
-  .accordion-header {
-    .accordion-button {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: var(--bs-dark-gray-2);
-      padding: 1.5rem 1rem;
-
-      // When the accordion item is collapsed (default state)
-      &:not(.collapsed) {
-        background-color: transparent;
-        box-shadow: none;
-        color: var(--bs-dark-gray);
-      }
-
-      // When the accordion item is open
-      &.collapsed {
-        background-color: transparent;
-      }
-
-      // Remove the default box-shadow on focus
-      &:focus {
-        box-shadow: none;
-        border-color: rgba(0, 0, 0, .125);
-      }
-
-      // Custom chevron icon styles
-      &::after {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-left: auto;
-        content: "";
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23343F52'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-size: 1.5rem;
-        transition: transform .2s ease-in-out;
-      }
-
-      &:not(.collapsed)::after {
-        // Point the chevron up when the item is open
-        transform: rotate(-180deg);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23343F52'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-      }
-
-      .item-number {
-        margin-right: 1rem;
-        font-weight: 700;
-        background: var(--bs-white);
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        padding: 12px 9px;
-        border: 1px solid #CECECE;
-        color: var(--bs-dark-gray);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-      }
+  &__image {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: var(--corner-5);
     }
   }
 
-  .accordion-body {
-    padding: 1rem 1rem 3rem 1rem;
-    color: var(--bs-dark-gray-3);
-  }
-}
-
-.accordion-divider {
-  border-top: 1px solid var(--bs-gray);
-  margin: 0;
-}
-
-
-.initiative-image {
-  img {
-    border-radius: var(--corner-5);
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .initiatives-section {
-    padding: 1rem;
+  @include media-breakpoint-down(md) {
+    padding: 3rem 1rem;
   }
 }
