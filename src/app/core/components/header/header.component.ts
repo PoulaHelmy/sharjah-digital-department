@@ -1,5 +1,5 @@
 import {Component, HostListener, inject} from '@angular/core';
-import {Arabic, English, HeaderNavData, LTR, RTL} from '@core/constants';
+import {Arabic, English, HeaderNavData} from '@core/constants';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {IconComponent} from '@shared/components/icon/icon.component';
 
@@ -29,10 +29,11 @@ export class HeaderComponent {
   }
 
   changeLang() {
+    console.log("=>(header.component.ts:32) changeLang", this.translateService.currentLang === English ? Arabic : English);
+    console.log("=>(header.component.ts:33) this.translateService.currentLang", this.translateService.currentLang);
     // This method can be used to change the language if needed
     // For example, you can use a service to change the language
     // this.translateService.use('en'); // Example for changing to English
     this.translateService.use(this.translateService.currentLang === English ? Arabic : English);
-    document.documentElement.dir = this.translateService.currentLang === Arabic ? RTL : LTR;
   }
 }

@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
-import {TranslatePipe} from '@ngx-translate/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+import {StatisticsCardComponent} from '@sections/hero/statistics-card/statistics-card.component';
+import {Arabic} from '@core/constants';
+import {distinctUntilChanged} from 'rxjs';
 
 // Interface for the feature items for strong typing
 interface FeatureItem {
@@ -13,39 +15,41 @@ interface FeatureItem {
   selector: 'app-hero',
   standalone: true,
   imports: [
-    NgForOf,
-    NgIf,
-    TranslatePipe
+    TranslatePipe,
+    StatisticsCardComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit {
-  // Data for the feature cards shown at the bottom
-  featureItems: FeatureItem[] = [];
+  translateService = inject(TranslateService);
+  readonly items = [1, 2, 3, 4];
+  currentIndex = 0;
+  isArabic = false;
 
   constructor() {
   }
 
+  get hasNext(): boolean {
+    return this.currentIndex < this.items.length - 1;
+  }
+
+
+  get hasPrevious(): boolean {
+    return this.currentIndex > 0;
+  }
+
+  goNext(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+  }
+
+  goPrevious(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+  }
+
   ngOnInit(): void {
-    this.featureItems = [
-      {
-        icon: 'M',
-        title: 'Empower People',
-        description: 'There are many variations of passages available.'
-      },
-      {
-        title: 'Digital Transformation',
-        description: 'There are many variations of passages available.'
-      },
-      {
-        title: 'Datacenter',
-        description: 'There are many variations of passages of Lorem Ipsum.'
-      },
-      {
-        title: 'Active Service Directory',
-        description: 'There are many variations of passages available.'
-      }
-    ];
+    this.translateService.onLangChange.pipe(distinctUntilChanged()).subscribe((event) => {
+      this.isArabic = event.lang === Arabic;
+    });
   }
 }

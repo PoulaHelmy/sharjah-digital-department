@@ -1,4 +1,4 @@
-<section class="our-services">
+<section class="our-services text-center">
   <h2 class="section__title mb-4">{{ 'services.sectionTitle' | translate }}</h2>
   <h3 class="section__subtitle mb-4">{{ 'services.title' | translate }}</h3>
   <div class="categories__container">
@@ -10,13 +10,13 @@
       </p>
     }
   </div>
-  <div [@listAnimation]="services.length" class="services__container row gy-4 my-4 justify-content-center">
+  <div class="services__container row gy-4 my-4 justify-content-center">
     @for (service of services; track service.titleKey) {
       <div class="col-6 col-md-4 col-lg-3">
         <div class="service-item">
           <div class="data">
             <h5>{{ service.titleKey | translate }}</h5>
-            <app-icon [iconName]="'icon-'+service.icon"/>
+            <span [class]="'icon-'+service.icon"></span>
           </div>
           <p class="description d-none d-md-block">
             {{ service.descriptionKey | translate }}
@@ -28,7 +28,7 @@
 </section>
 <div class="text-center d-flex justify-content-center mt-5">
   <p class="view-more">
-    <app-icon [iconName]="'icon-plus'"/>
+    <span class="icon-plus"></span>
     <span class="mx-2">{{ 'services.view_more' | translate }}</span>
   </p>
 </div>

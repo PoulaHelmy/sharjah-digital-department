@@ -4,13 +4,16 @@
 
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  height: calc(100vh - 150px);
+  //height: 100vh;
+  min-height: 600px;
   color: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   border-radius: 20px;
+  flex-flow: column;
+  justify-content: flex-end;
 }
 
 // Video Background and Overlay
@@ -39,7 +42,7 @@
 }
 
 .main-section {
-  height: 55%;
+  height: 60%;
   width: 50%;
   display: flex;
   flex-flow: column;
@@ -64,9 +67,84 @@
   line-height: 20px;
 }
 
-// Responsive adjustments
-@include media-breakpoint-down(lg) {
+.bottom-features {
+  padding: 2rem 2.5rem;
+}
 
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #AAB0BC;
+  transition: color 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  .feature-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: #AAB0BC;
+    margin: 0;
+  }
+
+  .feature-description {
+    font-weight: 400;
+    font-size: 12px;
+    color: #AAB0BC;
+    margin: 0;
+  }
+
+  &.active {
+    border-top: 2px solid #fff;
+
+    .feature-title {
+      color: #FFFFFF;
+    }
+
+    .feature-description {
+      color: #FFFFFF;
+    }
+  }
+}
+
+.arrow-button-group {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-block: 1.5rem;
+}
+
+.btn-arrow {
+  background-color: #fff;
+  border: none;
+  color: #5a697d;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: transparent; // Ensure hover effect is overridden
+    span {
+      &:before {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
 
 }
 
@@ -82,5 +160,4 @@
     gap: 2rem;
     padding: 1rem 1rem 4rem;
   }
-
 }

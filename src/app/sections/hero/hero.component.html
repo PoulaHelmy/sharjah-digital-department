@@ -8,18 +8,38 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="main-section">
-      <h1 class="main-title">{{ 'hero.title' | translate }}</h1>
-      <p class="main-desc">{{ 'hero.description' | translate }}</p>
+    <div class="main-section fade-up">
+      <h1 class="main-title fade-up">{{ 'hero.title' | translate }}</h1>
+      <p class="main-desc fade-up">{{ 'hero.description' | translate }}</p>
     </div>
-    <!--  <div class="container">-->
-    <!--    <div class="row align-items-center">-->
-    <!--      <div class="col-lg-6 text-white">-->
-    <!--        <h1 class="main-title">Establishing Sharjah as a global leader in innovation, safety and security</h1>-->
-    <!--        <p class="main-desc">There are many variations of passages of Lorem Ipsum available, but the majority have-->
-    <!--          suffered alteration in some form, by injected humour, or randomised.</p>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
+    <div class="bottom-features fade-up">
+      <div class="row">
+        <div class="col-12">
+          <div class="arrow-button-group">
+            <button (click)="goPrevious()"
+                    [class.disabled]="!hasPrevious"
+                    [disabled]="!hasPrevious"
+                    aria-label="Previous Item" class="btn-arrow">
+
+              <span [class]="isArabic ? 'icon-arrow-right' : 'icon-arrow-left-1'"></span>
+            </button>
+            <button (click)="goNext()"
+                    [class.disabled]="!hasNext"
+                    [disabled]="!hasNext"
+                    aria-label="Next Item" class="btn-arrow">
+              <span [class]="isArabic ? 'icon-arrow-left-1' : 'icon-arrow-right'"></span>
+            </button>
+          </div>
+        </div>
+        @for (item of [1, 2, 3, 4]; track item; let index = $index; let last = $last) {
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card" [class.active]="currentIndex === index">
+              <h5 class="feature-title">{{ 'hero.feature' + item + '.title' | translate }}</h5>
+              <p class="feature-description">{{ 'hero.feature' + item + '.description' | translate }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
   </div>
 </section>

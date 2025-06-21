@@ -12,7 +12,23 @@
   },
   "hero": {
     "title": "Establishing Sharjah as a global leader in innovation, safety and security",
-    "description": "There are many variations of passages of Lorem Ipsum available, but the majority have\n      suffered alteration in some form, by injected humour, or randomised."
+    "description": "There are many variations of passages of Lorem Ipsum available, but the majority have\n      suffered alteration in some form, by injected humour, or randomised.",
+    "feature1": {
+      "title": "Empower People",
+      "description": "There are many variations of passages available."
+    },
+    "feature2": {
+      "title": "Digital Transformation",
+      "description": "There are many variations of passages available."
+    },
+    "feature3": {
+      "title": "Datacenter",
+      "description": "There are many variations of passages of Lorem Ipsum."
+    },
+    "feature4": {
+      "title": "Active Service Directory",
+      "description": "There are many variations of passages available."
+    }
   },
   "services": {
     "sectionTitle": "Our Services",
