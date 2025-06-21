@@ -12,6 +12,6 @@ export class ApiService {
   }
 
   getLandingPageData(): Observable<DataResponse> {
-    return this.http.get<DataResponse>('./mock-data/db.json')
+    return this.http.get<DataResponse>('./assets/mock-data/db.json')
   }
 }

@@ -9,7 +9,7 @@ import {English} from '@core/constants';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
-  new TranslateHttpLoader(http, './i18n/', '.json');
+  new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
 export const appConfig: ApplicationConfig = {
   providers: [
