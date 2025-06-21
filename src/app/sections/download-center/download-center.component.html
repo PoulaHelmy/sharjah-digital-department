@@ -1,1 +1,24 @@
-<p>our-vision works!</p>
+<section class="text-center">
+  <h2 class="section__title mb-4">{{ 'downloadCenter.sectionTitle' | translate }}</h2>
+  <h3 class="section__subtitle mb-4">{{ 'downloadCenter.title' | translate }}</h3>
+  <div class="files">
+    @for (file of files; track file.id) {
+      <div class="file-data d-flex justify-content-between flex-wrap mb-3">
+        <div class="d-flex align-items-center flex-wrap text-start gap-3">
+          <p class="d-flex align-items-center gap-3 mx-3 mb-0">
+            <app-icon [iconName]="'icon-pdf-gray'" [iconClass]="'h3'"/>
+            <span class="text-l-body text-dark-gray-5 fw-bolder">{{ file.titleKey | translate }}</span>
+          </p>
+          <p class="text-18 text-gray mb-0">{{ file.descriptionKey | translate }}</p>
+        </div>
+        <div class="download-part">
+          <p class="text-18 text-gray mb-0">{{ file.date | translate }}</p>
+          <p class="d-flex align-items-baseline gap-2 mb-0 download">
+            <app-icon [iconName]="'icon-pdf-greeen'" [iconClass]="'text-20'"/>
+            <span class="text-green text-20">{{ 'downloadCenter.download' | translate }}</span>
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

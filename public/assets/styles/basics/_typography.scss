@@ -1,0 +1,117 @@
+// ======================= STC_Forward =================== //
+
+@font-face {
+  font-family: "AvenirArabic-SharjahGovt-Rg";
+  src: url("../../fonts/AvenirArabic-SharjahGovt-Rg.ttf") format("truetype"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Rg.woff") format("woff"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Rg.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AvenirArabic-SharjahGovt-Md";
+  src: url("../../fonts/AvenirArabic-SharjahGovt-Md.ttf") format("truetype"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Md.woff") format("woff"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Md.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AvenirArabic-SharjahGovt-Hv";
+  src: url("../../fonts/AvenirArabic-SharjahGovt-Hv.ttf") format("truetype"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Hv.woff") format("woff"),
+  url("../../fonts/AvenirArabic-SharjahGovt-Hv.woff2") format("woff2");
+  font-weight: bold;
+}
+
+// 2. GLOBAL CSS VARIABLE DEFINITIONS (DESKTOP-FIRST)
+// ----------------------------------------------------
+:root {
+  // --- Typography Scale ---
+  --font-h1: 3.33rem; // 40pt
+  --font-h2: 3rem; // 36pt
+  --font-h3: 2.25rem; // 36pt
+  --font-h4: 2.16rem; // 26pt
+  --font-h5: 1.66rem; // 20pt
+  --font-body: 1.16rem; // 14pt
+  --font-l-body: 1.33rem; // 16pt
+  --font-s-body: 1rem; // 12pt
+  --font-sub-title: 1.33rem; // 16pt
+  --font-sub-head: 1.5rem; // 18pt
+  --font-18: 1.125rem; // 13.5pt
+  --font-20: 1.25rem; // 13.5pt
+  --font-x-small: 0.875rem;
+
+  // --- Round Corners ---
+  --corner-5: 1.25rem; // 20px
+  --corner-4: 1rem; // 16px
+  --corner-3: 0.75rem; // 12px
+
+  // --- Override Bootstrap's base font ---
+  --bs-body-font-family: 'AvenirArabic-SharjahGovt-Rg', sans-serif;
+  --bs-body-font-size: var(--font-body);
+}
+
+
+// 3. RESPONSIVE OVERRIDES FOR MOBILE
+// ----------------------------------------------------
+@media (max-width: 768px) {
+  :root {
+    // --- Redefine variables for mobile ---
+    --font-h1: 2rem; // 24pt
+    --font-h2: 2.33rem; // 28pt
+    --font-h3: 2rem; // 24pt
+    --font-h4: 2rem; // 24pt
+    --font-h5: 1.33rem; // 16pt
+    --font-sub-head: 1.16rem; // 14pt
+  }
+}
+
+
+// 4. APPLY VARIABLES TO ELEMENTS
+// ----------------------------------------------------
+// Assign our variables to the heading elements
+h1, .h1 {
+  font-size: var(--font-h1);
+}
+
+h2, .h2 {
+  font-size: var(--font-h2);
+}
+
+h3, .h3 {
+  font-size: var(--font-h3);
+}
+
+h4, .h4 {
+  font-size: var(--font-h4);
+}
+
+h5, .h5 {
+  font-size: var(--font-h5);
+}
+
+// Create custom utility classes from the design system
+.text-l-body {
+  font-size: var(--font-l-body);
+}
+
+.text-s-body {
+  font-size: var(--font-s-body);
+}
+
+.text-sub-title {
+  font-size: var(--font-sub-title);
+}
+
+.text-sub-head {
+  font-size: var(--font-sub-head);
+}
+
+.text-18 {
+  font-size: var(--font-18);
+}
+
+.text-20 {
+  font-size: var(--font-18);
+}

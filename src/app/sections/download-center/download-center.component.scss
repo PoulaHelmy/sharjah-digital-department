@@ -1,0 +1,42 @@
+// 1. Import required Bootstrap files
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+
+.file-data {
+  border: 1px solid #AAB0BC4D;
+  border-radius: var(--corner-3);
+  padding: 20px;
+  background: var(--color-white);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); // smooth transition
+  transform: translateY(0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); // no shadow by default
+
+  &:hover {
+    transform: translateY(-6px); // slight lift on hover
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); // soft shadow
+  }
+}
+
+.download-part {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.download {
+  cursor: pointer;
+}
+
+@include media-breakpoint-down(md) {
+  .download-part {
+    flex-flow: column;
+    align-items: end;
+    width: 100%;
+
+    .download {
+      width: 100%;
+    }
+  }
+}

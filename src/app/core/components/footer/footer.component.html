@@ -1,1 +1,35 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img alt="Government of Sharjah - Sharjah Digital Department" src="assets/images/hero-section/Logo2x.png">
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          @for (icon of headerNavData; track icon) {
+            <li>
+              <!--               TODO: handle navigation to different sections or pages              -->
+              <a [title]="icon.key | translate" [href]="icon.route" class="dark-gray-5 text-decoration-none">
+                {{ icon.key | translate }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copy-right">
+        {{ 'footer.copyright' | translate }}
+      </div>
+      <div class="social-links">
+        <span class="follow-us"> {{ 'footer.followUs' | translate }}</span>
+        @for (icon of footerLinks; track icon) {
+          <a [title]="icon.key | translate" [href]="icon.route">
+            <app-icon [iconName]="icon.icon || ''"/>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

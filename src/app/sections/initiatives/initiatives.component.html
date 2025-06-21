@@ -1,0 +1,46 @@
+<section class="initiatives-section">
+  <div class="">
+    <div class="section-header text-center mb-5">
+      <h2 class="section__title mb-4">{{ 'initiatives.sectionTitle' | translate }}</h2>
+      <h3 class="section__subtitle mb-4">{{ 'initiatives.title' | translate }}</h3>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="accordion" id="initiativesAccordion">
+          @for (item of [1, 2, 3, 4]; track item; let i = $index; let last = $last) {
+            <div class="accordion-item">
+              <h2 [id]="'heading-' + item" class="accordion-header">
+                <button [attr.aria-controls]="'collapse-' + item" [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+                        [attr.data-bs-target]="'#collapse-' + item"
+                        class="accordion-button" data-bs-toggle="collapse"
+                        type="button">
+                  <span class="item-number">
+                   {{ '0' + (i + 1) }}
+                  </span>
+                  {{ ('initiatives.items.initiative' + item + '.title') | translate }}
+                </button>
+              </h2>
+              <div [attr.aria-labelledby]="'heading-' + item" [id]="'collapse-' + item"
+                   [ngClass]="{'show': i === 0}"
+                   class="accordion-collapse collapse" data-bs-parent="#initiativesAccordion">
+                <div class="accordion-body">
+                  {{ ('initiatives.items.initiative' + item + '.description') | translate }}
+                </div>
+              </div>
+            </div>
+            @if (!last) {
+              <hr class="accordion-divider">
+            }
+          }
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="initiative-image">
+          <img alt="Abstract network visualization" src="assets/images/initiatives/initiatives.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

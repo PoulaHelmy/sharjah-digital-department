@@ -1,6 +1,6 @@
-import {NavItem} from '@core/components/header/header.interface';
+import {NavItem} from '@core/models/nav-item.interface';
 
-export const Nav_Data: NavItem[] = [
+export const HeaderNavData: NavItem[] = [
   {key: 'header.navigation.home', route: '#home'},
   {key: 'header.navigation.downloadCenter', route: '#downloadCenter'},
   {key: 'header.navigation.initiatives', route: '#initiatives'},

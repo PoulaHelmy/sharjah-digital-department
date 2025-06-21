@@ -1,12 +1,24 @@
-import {Component} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {TranslatePipe} from '@ngx-translate/core';
+import {StateService} from '@core/services';
+import {FileData} from '@core/models/response';
+import {IconComponent} from '@shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-download-center',
-  imports: [],
+  imports: [
+    TranslatePipe,
+    IconComponent
+  ],
   templateUrl: './download-center.component.html',
   standalone: true,
   styleUrl: './download-center.component.scss'
 })
-export class DownloadCenterComponent {
+export class DownloadCenterComponent implements OnInit {
+  public stateService = inject(StateService);
+  files: FileData[] = [];
 
+  ngOnInit() {
+    this.files = this.stateService.getData().downloadCenter.files || [];
+  }
 }

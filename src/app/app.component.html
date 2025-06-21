@@ -1,9 +1,14 @@
-<div class="p-3 flex flex-column">
-  <app-header/>
-  <app-hero/>
-  <app-our-vision/>
-  <app-our-scope/>
-  <app-our-services/>
-  <app-download-center/>
-  <app-footer/>
-</div>
+@if (loading) {
+  <h1>Loading...</h1>
+} @else {
+  <div class="body-container">
+    <app-header/>
+    <app-hero/>
+    <!--    <app-our-vision/>-->
+    <!--    <app-our-scope/>-->
+    <app-our-services/>
+    <app-initiatives/>
+    <app-download-center/>
+    <app-footer/>
+  </div>
+}

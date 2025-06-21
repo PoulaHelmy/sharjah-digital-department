@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {NavItem} from '@core/components/header/header.interface';
-import {Nav_Data} from '@core/components/header/header-data';
+import {HeaderNavData} from '@core/constants';
 
 @Component({
   selector: 'app-header',
@@ -10,5 +9,5 @@ import {Nav_Data} from '@core/components/header/header-data';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  navItems: NavItem[] = Nav_Data;
+  headerNavData = HeaderNavData;
 }

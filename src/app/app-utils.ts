@@ -5,6 +5,7 @@ import {OurVisionComponent} from '@sections/our-vision/our-vision.component';
 import {OurServicesComponent} from '@sections/our-services/our-services.component';
 import {OurScopeComponent} from '@sections/our-scope/our-scope.component';
 import {DownloadCenterComponent} from '@sections/download-center/download-center.component';
+import {InitiativesComponent} from '@sections/initiatives/initiatives.component';
 
 export const MainComponents = [
   HeroComponent,
@@ -13,5 +14,6 @@ export const MainComponents = [
   OurVisionComponent,
   OurServicesComponent,
   OurScopeComponent,
-  DownloadCenterComponent
+  DownloadCenterComponent,
+  InitiativesComponent
 ];

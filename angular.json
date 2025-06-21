@@ -46,7 +46,10 @@
                   "global-builtin",
                   "import"
                 ]
-              }
+              },
+              "includePaths": [
+                "node_modules"
+              ]
             }
           },
           "configurations": {

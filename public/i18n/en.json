@@ -12,6 +12,7 @@
   "services": {
     "sectionTitle": "Our Services",
     "title": "One Connected Government",
+    "view_more": "View More",
     "categories": {
       "all": "All",
       "digital": "Digital Infrastructure",
@@ -92,6 +93,36 @@
       "position": "Director of Sharjah Digital Department"
     }
   },
+  "downloadCenter": {
+    "sectionTitle": "Download Center",
+    "title": "Stay updated with latest publications ",
+    "item_title": "CSAM Brochure 2023",
+    "item_description": "Vivamus sagittis lacus augue fusce dapibus tellus nibh.",
+    "item_date": "February 2024",
+    "download": "Download"
+  },
+  "initiatives": {
+    "sectionTitle": "Initiatives",
+    "title": "One Leadership Consistent Decision",
+    "items": {
+      "initiative1": {
+        "title": "AI & Machine Learnings Initiative ",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, Lorem Ipsum is simply dummy text of the printing and typesetting industry, Lorem Ipsum dummy text has been the industry's standard dummy text. \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+      },
+      "initiative2": {
+        "title": "Sharjah Digital Department Initiative",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, Lorem Ipsum is simply dummy text of the printing and typesetting industry, Lorem Ipsum dummy text has been the industry's standard dummy text. \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+      },
+      "initiative3": {
+        "title": "Lorem Ipsum is simply dummy text of the printing.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, Lorem Ipsum is simply dummy text of the printing and typesetting industry, Lorem Ipsum dummy text has been the industry's standard dummy text. \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+      },
+      "initiative4": {
+        "title": "Lorem Ipsum is simply dummy text of the printing.",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, Lorem Ipsum is simply dummy text of the printing and typesetting industry, Lorem Ipsum dummy text has been the industry's standard dummy text. \n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+      }
+    }
+  },
   "footer": {
     "copyright": "Copyright Reserved to Sharjah Digital Department © 2024.",
     "followUs": "Follow Us",
@@ -99,7 +130,7 @@
       "facebook": "Facebook",
       "twitter": "Twitter",
       "instagram": "Instagram",
-      "linkedin": "LinkedIn"
+      "youtube": "YouTube"
     }
   }
 }

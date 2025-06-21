@@ -1,60 +1,75 @@
 {
   "services": {
     "categories": [
-      "services.categories.all",
-      "services.categories.digital",
-      "services.categories.operations",
-      "services.categories.experience",
-      "services.categories.training"
+      {
+        "id": 0,
+        "value": "services.categories.all"
+      },
+      {
+        "id": 1,
+        "value": "services.categories.digital"
+      },
+      {
+        "id": 2,
+        "value": "services.categories.operations"
+      },
+      {
+        "id": 3,
+        "value": "services.categories.experience"
+      },
+      {
+        "id": 4,
+        "value": "services.categories.training"
+      }
     ],
     "items": [
       {
         "icon": "services-infrastructure",
         "titleKey": "services.items.infrastructure.title",
         "descriptionKey": "services.items.infrastructure.description",
-        "categoryKey": "services.categories.digital"
+        "categoryId": 1
       },
       {
         "icon": "services-hosting",
         "titleKey": "services.items.hosting.title",
         "descriptionKey": "services.items.hosting.description",
-        "categoryKey": "services.categories.digital"
+        "categoryId": 1
       },
       {
         "icon": "services-optimize",
         "titleKey": "services.items.optimize.title",
         "descriptionKey": "services.items.optimize.description",
-        "categoryKey": "services.categories.operations"
+        "categoryId": 2
       },
       {
         "icon": "services-connect",
         "titleKey": "services.items.connect.title",
         "descriptionKey": "services.items.connect.description",
-        "categoryKey": "services.categories.operations"
+        "categoryId": 2
       },
       {
         "icon": "services-colocate",
         "titleKey": "services.items.colocate.title",
         "descriptionKey": "services.items.colocate.description",
-        "categoryKey": "services.categories.digital"
+        "categoryId": 1
       },
       {
         "icon": "services-insight",
         "titleKey": "services.items.insight.title",
         "descriptionKey": "services.items.insight.description",
-        "categoryKey": "services.categories.experience"
+        "categoryId": 3
       },
       {
         "icon": "services-license",
         "titleKey": "services.items.license.title",
         "descriptionKey": "services.items.license.description",
-        "categoryKey": "services.categories.experience"
+        "categoryId": 3
       },
       {
         "icon": "services-assess",
         "titleKey": "services.items.assess.title",
         "descriptionKey": "services.items.assess.description",
-        "categoryKey": "services.categories.training"
+        "categoryId": 4
       }
     ]
   },
@@ -81,6 +96,28 @@
         "icon": "slide-4",
         "titleKey": "scope.items.ai.title",
         "descriptionKey": "scope.items.ai.description"
+      }
+    ]
+  },
+  "downloadCenter": {
+    "files": [
+      {
+        "id": 1,
+        "titleKey": "downloadCenter.item_title",
+        "descriptionKey": "downloadCenter.item_description",
+        "date": "downloadCenter.item_date"
+      },
+      {
+        "id": 2,
+        "titleKey": "downloadCenter.item_title",
+        "descriptionKey": "downloadCenter.item_description",
+        "date": "downloadCenter.item_date"
+      },
+      {
+        "id": 3,
+        "titleKey": "downloadCenter.item_title",
+        "descriptionKey": "downloadCenter.item_description",
+        "date": "downloadCenter.item_date"
       }
     ]
   }
