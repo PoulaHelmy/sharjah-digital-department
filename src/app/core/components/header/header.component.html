@@ -32,9 +32,8 @@
 <!--  </nav>-->
 <!--</header>-->
 
-
-<header class="header">
-  <nav class="nav d-flex justify-content-between align-items-center px-3 py-2">
+<header [class.glassmorphism]="isScrolled" class="header my-4">
+  <nav class="nav d-flex justify-content-between align-items-center px-4 py-2">
     <!-- Logo + Beta -->
     <div class="nav__brand d-flex gap-2 align-items-start">
       <img
@@ -63,7 +62,7 @@
         [iconName]="'icon-accessibility'"
       />
       <span class="nav__divider"></span>
-      <button class="nav__language btn btn-sm">العربية</button>
+      <button (click)="changeLang()" class="nav__language btn btn-sm">{{ 'lang' | translate }}</button>
     </div>
 
     <!-- Mobile Toggle -->
@@ -89,7 +88,7 @@
         <span class="nav__beta badge">Beta</span>
       </div>
       <div>
-        <button class="nav__language fw-bolder btn">العربية</button>
+        <button (click)="changeLang()" class="nav__language fw-bolder btn">{{ 'lang' | translate }}</button>
         <button (click)="toggleMobileMenu()" class="btn">
           <span class="fs-2">&times;</span>
         </button>

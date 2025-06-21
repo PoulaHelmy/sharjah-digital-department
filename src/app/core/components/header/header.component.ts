@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {HeaderNavData} from '@core/constants';
-import {TranslatePipe} from '@ngx-translate/core';
+import {Component, HostListener, inject} from '@angular/core';
+import {Arabic, English, HeaderNavData, LTR, RTL} from '@core/constants';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {IconComponent} from '@shared/components/icon/icon.component';
 
 @Component({
@@ -14,31 +14,25 @@ import {IconComponent} from '@shared/components/icon/icon.component';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  translateService = inject(TranslateService);
   headerNavData = HeaderNavData;
-  navbarOpen = false;
-  menuOpen = false;
   isMobileMenuOpen = false;
+  isScrolled = false;
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-
-  // A function to toggle dark mode (add your logic here)
-  toggleDarkMode() {
-    console.log('Dark mode toggled');
-    // Example: document.body.classList.toggle('dark-theme');
-  }
-
-  // A function to switch the language (add your logic here)
-  switchLanguage() {
-    console.log('Language switched');
+  changeLang() {
+    // This method can be used to change the language if needed
+    // For example, you can use a service to change the language
+    // this.translateService.use('en'); // Example for changing to English
+    this.translateService.use(this.translateService.currentLang === English ? Arabic : English);
+    document.documentElement.dir = this.translateService.currentLang === Arabic ? RTL : LTR;
   }
 }

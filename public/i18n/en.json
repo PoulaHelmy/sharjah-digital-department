@@ -1,4 +1,5 @@
 {
+  "lang": "العربية",
   "header": {
     "navigation": {
       "home": "Home",
@@ -8,6 +9,10 @@
       "ourScope": "Our Scope",
       "ourVision": "Our Vision"
     }
+  },
+  "hero": {
+    "title": "Establishing Sharjah as a global leader in innovation, safety and security",
+    "description": "There are many variations of passages of Lorem Ipsum available, but the majority have\n      suffered alteration in some form, by injected humour, or randomised."
   },
   "services": {
     "sectionTitle": "Our Services",

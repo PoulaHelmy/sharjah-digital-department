@@ -1,7 +1,17 @@
 /* Header styles */
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
   background: #fff;
+  transition: all 0.3s ease-in-out;
+
+  &.glassmorphism {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
 }
 
 .nav__logo {
