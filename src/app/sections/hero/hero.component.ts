@@ -1,6 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
-import {StatisticsCardComponent} from '@sections/hero/statistics-card/statistics-card.component';
 import {Arabic} from '@core/constants';
 import {distinctUntilChanged} from 'rxjs';
 
@@ -15,8 +14,7 @@ interface FeatureItem {
   selector: 'app-hero',
   standalone: true,
   imports: [
-    TranslatePipe,
-    StatisticsCardComponent
+    TranslatePipe
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'

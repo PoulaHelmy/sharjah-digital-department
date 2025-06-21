@@ -2,20 +2,18 @@ import {Component, inject, OnInit} from '@angular/core';
 import {TranslatePipe} from '@ngx-translate/core';
 import {StateService} from '@core/services';
 import {Category, Item} from '@core/models/response';
-import {IconComponent} from '@shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-our-services',
   imports: [
-    TranslatePipe,
-    IconComponent
+    TranslatePipe
   ],
   templateUrl: './our-services.component.html',
   standalone: true,
   styleUrl: './our-services.component.scss',
 })
 export class OurServicesComponent implements OnInit {
-  public stateService = inject(StateService);
+  stateService = inject(StateService);
   categories: Category[] = [];
   selectedCategory: Category | null = null;
   services: Item[] = [];

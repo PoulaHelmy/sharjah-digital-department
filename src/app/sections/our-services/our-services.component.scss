@@ -1,78 +1,88 @@
-// 1. Import required Bootstrap files
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
-.categories__container {
+.categories {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 
-  .category__item {
+  &__item {
     font-size: var(--font-x-small);
     font-weight: 500;
     color: var(--bs-gray);
-    margin: 0;
     background: var(--bs-base-gray);
     border-radius: var(--corner-4);
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: all 0.23s ease-in-out;
+    margin: 0;
 
-    &.selected, {
+    &--selected {
       background: var(--bs-green);
       color: var(--bs-white);
     }
 
     &:hover {
       background: var(--bs-green);
-      opacity: 0.6;
       color: var(--bs-white);
+      opacity: 0.6;
     }
   }
 }
 
-.service-item {
-  border: 1px solid var(--bs-gray);
-  border-radius: var(--corner-5);
-  padding: 2.375rem;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); // back-out / pop effect
-  transform: scale(1);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 
-  .data {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h5 {
-      font-weight: 800;
-      color: var(--bs-dark-gray);
-      margin: 0;
-    }
+.services {
+  &__container {
+    row-gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .description {
-    color: var(--bs-gray);
-    font-size: var(--font-x-small);
-    text-align: start;
-    margin: 1.5rem 0 0;
-  }
+  &__item {
+    border: 1px solid var(--bs-gray);
+    border-radius: var(--corner-5);
+    padding: 2.375rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background: var(--bs-white);
 
-  &:hover {
-    transform: scale(1.05) translateY(-4px); // slight scale + lift
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-    background: var(--bs-dark-gray);
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-    .description, .data h5 {
-      color: #fff;
+      h5 {
+        font-weight: 800;
+        color: var(--bs-dark-gray);
+        margin: 0;
+      }
     }
 
-    span {
-      &:before {
-        color: #fff;
+    &__description {
+      color: var(--bs-gray);
+      font-size: var(--font-x-small);
+      text-align: start;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+      background: var(--bs-dark-gray);
+
+      .services__item__description,
+      .services__item__header h5 {
+        color: var(--bs-white);
+      }
+
+      span::before {
+        color: var(--bs-white);
       }
     }
   }
@@ -81,21 +91,32 @@
 .view-more {
   background: var(--bs-light-gray);
   color: var(--bs-gray);
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 2rem;
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  .icon-plus {
+    margin-right: 0.5rem;
+  }
 }
 
-@include media-breakpoint-down(md) {
-  .service-item {
-    padding: 1.5rem 1rem;
 
-    .data {
-      flex-flow: column;
-      align-items: flex-start;
-      gap: 1rem;
+@include media-breakpoint-down(lg) {
+  .categories {
+    gap: 0.6rem;
+  }
+  .services {
+    &__item {
+      padding: 1.5rem 1rem;
+
+      &__header {
+        h5 {
+          font-size: var(--font-18);
+        }
+      }
     }
   }
-
-
 }
