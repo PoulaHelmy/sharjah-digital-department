@@ -16,14 +16,32 @@ export class HeaderComponent {
   headerNavData = HeaderNavData;
   isMobileMenuOpen = false;
   isScrolled = false;
+  isClosing = false;
 
   toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    if (this.isMobileMenuOpen) {
+      this.isClosing = true;
+
+      setTimeout(() => {
+        this.isMobileMenuOpen = false;
+        this.isClosing = false;
+      }, 300); // same as CSS transition duration
+    } else {
+      this.isMobileMenuOpen = true;
+    }
   }
+
+  // toggleMobileMenu() {
+  //   this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  // }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
+    // CLOSE MOBILE MENU ON SCROLL
+    if (this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+    }
   }
 
   changeLang() {

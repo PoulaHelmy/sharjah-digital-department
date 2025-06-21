@@ -1,11 +1,11 @@
-<header [class.header--glass]="isScrolled" class="header my-4">
+<header [class.header--glass]="isScrolled" class="header">
   <nav class="header__nav">
     <!-- Brand -->
     <div class="header__brand">
       <img
         alt="Sharjah Digital Department"
         class="header__brand-logo"
-        src="https://static.codia.ai/custom_image/2025-06-21/132535/logo.svg"
+        src="assets/images/hero-section/Logo2x.png"
       />
       <span class="header__brand-beta badge">Beta</span>
     </div>
@@ -40,31 +40,33 @@
     </button>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div [class.header__mobile-menu--open]="isMobileMenuOpen" class="header__mobile-menu d-lg-none">
-    <div class="d-flex justify-content-between align-items-center p-3">
-      <div class="header__brand">
-        <img
-          alt="Sharjah Digital Department"
-          class="header__brand-logo"
-          src="assets/images/hero-section/Logo2x.png"
-        />
-        <span class="header__brand-beta badge">Beta</span>
-      </div>
-      <div>
-        <button (click)="changeLang()" class="btn fw-bold">{{ 'lang' | translate }}</button>
-        <button (click)="toggleMobileMenu()" class="btn fs-3">&times;</button>
-      </div>
-    </div>
-
-    <ul>
-      @for (navItem of headerNavData; track i; let i = $index) {
-        <li>
-          <a class="header__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
-            {{ navItem.key | translate }}
-          </a>
-        </li>
-      }
-    </ul>
-  </div>
 </header>
+
+<!-- Mobile Menu -->
+<div [class.header__mobile-menu--closing]="isClosing"
+     [class.header__mobile-menu--open]="isMobileMenuOpen && !isClosing" class="header__mobile-menu d-lg-none">
+  <div class="d-flex justify-content-between align-items-center p-3">
+    <div class="header__brand">
+      <img
+        alt="Sharjah Digital Department"
+        class="header__brand-logo"
+        src="assets/images/hero-section/Logo2x.png"
+      />
+      <span class="header__brand-beta badge">Beta</span>
+    </div>
+    <div>
+      <button (click)="changeLang()" class="btn fw-bold">{{ 'lang' | translate }}</button>
+      <button (click)="toggleMobileMenu()" class="btn fs-3">&times;</button>
+    </div>
+  </div>
+
+  <ul>
+    @for (navItem of headerNavData; track i; let i = $index) {
+      <li>
+        <a class="header__link" [href]="navItem.route" [attr.aria-label]="navItem.key | translate">
+          {{ navItem.key | translate }}
+        </a>
+      </li>
+    }
+  </ul>
+</div>
