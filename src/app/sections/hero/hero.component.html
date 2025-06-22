@@ -1,46 +1,55 @@
 <section class="my-4 px-4">
-  <div class="hero-section">
-    <div class="video-background">
-      <div class="video-overlay"></div>
-      <!--    poster="assets/images/hero-poster.jpg"-->
+  <div class="hero">
+    <div class="hero__video">
+      <div class="hero__video-overlay"></div>
       <video autoplay loop muted playsinline>
         <source src="../../../../assets/videos/slowmo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="main-section fade-up">
-      <h1 class="main-title fade-up">{{ 'hero.title' | translate }}</h1>
-      <p class="main-desc fade-up">{{ 'hero.description' | translate }}</p>
+
+    <div class="hero__main fade-up">
+      <h1 class="hero__title fade-up">{{ 'hero.title' | translate }}</h1>
+      <p class="hero__desc fade-up">{{ 'hero.description' | translate }}</p>
     </div>
-    <div class="bottom-features fade-up">
+
+    <div class="hero__features fade-up">
       <div class="row">
         <div class="col-12">
-          <div class="arrow-button-group">
+          <div class="hero__nav">
             <button (click)="goPrevious()"
                     [class.disabled]="!hasPrevious"
                     [disabled]="!hasPrevious"
-                    aria-label="Previous Item" class="btn-arrow">
-
+                    aria-label="Previous Item"
+                    class="hero__nav-btn">
               <span [class]="isArabic ? 'icon-arrow-right' : 'icon-arrow-left-1'"></span>
             </button>
+
             <button (click)="goNext()"
                     [class.disabled]="!hasNext"
                     [disabled]="!hasNext"
-                    aria-label="Next Item" class="btn-arrow">
+                    aria-label="Next Item"
+                    class="hero__nav-btn">
               <span [class]="isArabic ? 'icon-arrow-left-1' : 'icon-arrow-right'"></span>
             </button>
           </div>
         </div>
+
         @for (item of [1, 2, 3, 4]; track item; let index = $index; let last = $last) {
           <div class="col-3">
-            <div class="feature-card" [class.active]="currentIndex === index">
-              <h5 class="feature-title">{{ 'hero.feature' + item + '.title' | translate }}</h5>
-              <p class="feature-description">{{ 'hero.feature' + item + '.description' | translate }}</p>
+            <div class="hero__feature-card" [class.hero__feature-card--active]="currentIndex === index">
+              <h5 class="hero__feature-card-title">
+                {{ 'hero.feature' + item + '.title' | translate }}
+              </h5>
+              <p class="hero__feature-card-desc">
+                {{ 'hero.feature' + item + '.description' | translate }}
+              </p>
             </div>
           </div>
         }
       </div>
     </div>
+
     <app-statistics-cards/>
   </div>
 </section>
