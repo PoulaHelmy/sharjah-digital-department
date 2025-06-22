@@ -120,7 +120,8 @@
       align-items: center;
       justify-content: flex-start;
       text-align: start;
-      padding: 1.2rem 0rem;
+      padding: 1.2rem 0;
+      direction: ltr;
     }
 
     &-app-text {
