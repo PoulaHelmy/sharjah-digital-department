@@ -1,0 +1,157 @@
+
+.line-group {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.line {
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+}
+
+.pulse-dot {
+  --pulse-color: 25, 135, 84;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 0 0 rgba(var(--pulse-color), 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--pulse-color), 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(var(--pulse-color), 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--pulse-color), 0);
+  }
+}
+
+
+.line1 {
+  top: 45%;
+  inset-inline-start: 20%;
+}
+
+.line2 {
+  top: 55%;
+  inset-inline-start: 30%
+}
+
+.line3 {
+  top: 22%;
+  inset-inline-end: 10%;
+}
+
+.stats-card-container {
+  width: 275px;
+  height: 225px;
+  position: absolute;
+
+  &.card-active-1 {
+    top: 25%;
+    inset-inline-start: 2%;
+  }
+
+  &.card-active-2 {
+    top: 56%;
+    inset-inline-start: 32%;
+  }
+
+  &.card-active-3 {
+    bottom: 20%;
+    inset-inline-end: 5%;
+  }
+
+  &.card-active-4 {
+    top: 0%;
+    inset-inline-end: 8%;
+  }
+}
+
+.stats-card {
+  background-size: 100% 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../../../../assets/images/stats-card-rotated.png") no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  backdrop-filter: blur(1.5px);
+  padding: 1.5rem;
+
+  &.not_rotated {
+    background: url("../../../../assets/images/stat-card-bg.png") no-repeat;
+  }
+
+  &__number {
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 96px;
+    margin: 0;
+  }
+
+  &__app-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: start;
+    padding: 1.2rem 0rem;
+  }
+
+  &__label {
+    margin: 0;
+  }
+
+  img {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+
+
+  &__app-text {
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+}
+
+.stats-action {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  .action {
+    width: 60px;
+    height: 60px;
+    background: var(--bs-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      &:before {
+        color: var(--bs-white);
+      }
+
+      transform: rotate(315deg);
+    }
+  }
+}

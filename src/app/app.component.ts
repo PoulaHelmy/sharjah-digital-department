@@ -4,11 +4,13 @@ import {ApiService, StateService} from '@core/services';
 import {TranslateService} from '@ngx-translate/core';
 import {Arabic, English, LTR, RTL} from '@core/constants';
 import {distinctUntilChanged} from 'rxjs';
+import {LoaderComponent} from '@shared/components/loader/loader.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    ...MainComponents
+    ...MainComponents,
+    LoaderComponent
   ],
   standalone: true,
   templateUrl: './app.component.html',

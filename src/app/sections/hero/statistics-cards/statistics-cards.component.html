@@ -1,0 +1,55 @@
+<div class="lines-container">
+  <div class="line-group fade-up line1">
+    <div (click)="openCard(1)" class="pulse-dot"></div>
+    <div class="line"></div>
+  </div>
+  <div class="line-group fade-up line2">
+    <div (click)="openCard(2)" class="pulse-dot"></div>
+    <div class="line"></div>
+  </div>
+  <div class="line-group fade-up line3">
+    <div (click)="openCard(4)" class="pulse-dot"></div>
+    <div class="line"></div>
+  </div>
+</div>
+<div class="stats-card-container fade-up card-active-3">
+  <div class="stats-card">
+    <p class="stats-card__number">
+      {{ 'hero.stat_card-3.value' | translate }}
+    </p>
+    <p class="stats-card__label">{{ 'hero.stat_card-3.title' | translate }}</p>
+    <div class="stats-card__app-info">
+      <img alt="" class="stats-card__icon"
+           src="assets/images/hero-section/icon-512x512 1.png">
+      <span class="stats-card__app-text">{{ 'hero.stat_card-3.subtitle' | translate }}</span>
+    </div>
+    <div class="stats-action">
+      <div class="action">
+        <span class="icon-arrow-right"></span>
+      </div>
+    </div>
+  </div>
+</div>
+@for (item of [1, 2, 4]; track item; let i = $index; let last = $last) {
+  <div class="stats-card-container fade-up {{'card-active-' + item}}"
+       [class.not_rotated]="selectedIndex === 2"
+       [class.d-block]="selectedIndex === item"
+       [class.d-none]="selectedIndex !== item">
+    <div class="stats-card">
+      <p class="stats-card__number">
+        {{ 'hero.stat_card-' + item + '.value' | translate }}
+      </p>
+      <p class="stats-card__label">{{ 'hero.stat_card-' + item + '.title' | translate }}</p>
+      <div class="stats-card__app-info">
+        <img src="assets/images/hero-section/small-logo.png" alt=""
+             class="stats-card__icon">
+        <span class="stats-card__app-text">{{ 'hero.stat_card-' + item + '.subtitle' | translate }}</span>
+      </div>
+      <div class="stats-action">
+        <div class="action" (click)="closeCard()">
+          <span class="icon-arrow-right"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+}

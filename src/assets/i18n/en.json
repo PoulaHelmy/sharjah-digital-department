@@ -11,6 +11,10 @@
     },
     "beta": "Beta"
   },
+  "loader": {
+    "loading": "Loading...",
+    "error": "Error loading data"
+  },
   "hero": {
     "title": "Establishing Sharjah as a global leader in innovation, safety and security",
     "description": "There are many variations of passages of Lorem Ipsum available, but the majority have\n      suffered alteration in some form, by injected humour, or randomised.",
@@ -29,6 +33,26 @@
     "feature4": {
       "title": "Active Service Directory",
       "description": "There are many variations of passages available."
+    },
+    "stat_card-1": {
+      "title": "Government Department\nUsing SDD Infrastracture ",
+      "value": "190",
+      "subtitle": "SDD . Serving"
+    },
+    "stat_card-2": {
+      "title": "Active Digital Solution",
+      "value": "+20",
+      "subtitle": "SDD  Service Catalog"
+    },
+    "stat_card-3": {
+      "title": "Active Citizen & Resident",
+      "value": "1.2m",
+      "subtitle": "Using\nSharjah Digital App"
+    },
+    "stat_card-4": {
+      "title": "Servers",
+      "value": "200",
+      "subtitle": "On-Prime Datacenter"
     }
   },
   "services": {

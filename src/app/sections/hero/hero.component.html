@@ -32,7 +32,7 @@
           </div>
         </div>
         @for (item of [1, 2, 3, 4]; track item; let index = $index; let last = $last) {
-          <div class="col-lg-3 col-md-6">
+          <div class="col-3">
             <div class="feature-card" [class.active]="currentIndex === index">
               <h5 class="feature-title">{{ 'hero.feature' + item + '.title' | translate }}</h5>
               <p class="feature-description">{{ 'hero.feature' + item + '.description' | translate }}</p>
@@ -41,5 +41,6 @@
         }
       </div>
     </div>
+    <app-statistics-cards/>
   </div>
 </section>

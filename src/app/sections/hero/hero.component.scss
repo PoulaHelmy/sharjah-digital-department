@@ -5,7 +5,6 @@
 .hero-section {
   position: relative;
   height: calc(100vh - 150px);
-  //height: 100vh;
   min-height: 600px;
   color: #fff;
   display: flex;
@@ -42,7 +41,7 @@
 }
 
 .main-section {
-  height: 60%;
+  height: 55%;
   width: 50%;
   display: flex;
   flex-flow: column;
@@ -68,6 +67,7 @@
 }
 
 .bottom-features {
+  width: 100%;
   padding: 2rem 2.5rem;
 }
 
@@ -144,8 +144,11 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .bottom-features {
+    display: none;
+  }
+  app-statistics-cards {
     display: none;
   }
 }
