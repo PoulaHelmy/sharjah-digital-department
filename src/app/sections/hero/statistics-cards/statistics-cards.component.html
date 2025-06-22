@@ -1,0 +1,51 @@
+<div class="lines">
+  <div class="lines__group lines--pos-1 fade-up">
+    <div (click)="openCard(1)" class="lines__pulse-dot"></div>
+    <div class="lines__line"></div>
+  </div>
+  <div class="lines__group lines--pos-2 fade-up">
+    <div (click)="openCard(2)" class="lines__pulse-dot"></div>
+    <div class="lines__line"></div>
+  </div>
+  <div class="lines__group lines--pos-3 fade-up">
+    <div (click)="openCard(4)" class="lines__pulse-dot"></div>
+    <div class="lines__line"></div>
+  </div>
+</div>
+
+<div class="stats__container fade-up stats__container--card-3">
+  <div class="stats__card">
+    <p class="stats__card-number">{{ 'hero.stat_card-3.value' | translate }}</p>
+    <p class="stats__card-label">{{ 'hero.stat_card-3.title' | translate }}</p>
+    <div class="stats__card-app-info">
+      <img alt="" class="stats__card-icon" src="assets/images/hero-section/icon-512x512 1.png"/>
+      <span class="stats__card-app-text">{{ 'hero.stat_card-3.subtitle' | translate }}</span>
+    </div>
+    <div class="stats__action">
+      <div class="stats__action-btn">
+        <span class="icon-arrow-right"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+@for (item of [1, 2, 4]; track item; let i = $index; let last = $last) {
+  <div class="stats__container fade-up stats__container--card-{{item}}"
+       [class.stats__card--not-rotated]="selectedIndex === 2"
+       [class.d-block]="selectedIndex === item"
+       [class.d-none]="selectedIndex !== item">
+    <div class="stats__card">
+      <p class="stats__card-number">{{ 'hero.stat_card-' + item + '.value' | translate }}</p>
+      <p class="stats__card-label">{{ 'hero.stat_card-' + item + '.title' | translate }}</p>
+      <div class="stats__card-app-info">
+        <img class="stats__card-icon" src="assets/images/hero-section/small-logo-2x.png" alt=""/>
+        <span class="stats__card-app-text">{{ 'hero.stat_card-' + item + '.subtitle' | translate }}</span>
+      </div>
+      <div class="stats__action">
+        <div class="stats__action-btn" (click)="closeCard()">
+          <span class="icon-arrow-right"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -2,19 +2,15 @@ import {Component, inject, OnInit} from '@angular/core';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {Arabic} from '@core/constants';
 import {distinctUntilChanged} from 'rxjs';
+import {StatisticsCardsComponent} from '@sections/hero/statistics-cards/statistics-cards.component';
 
-// Interface for the feature items for strong typing
-interface FeatureItem {
-  icon?: string;
-  title: string;
-  description: string;
-}
 
 @Component({
   selector: 'app-hero',
   standalone: true,
   imports: [
-    TranslatePipe
+    TranslatePipe,
+    StatisticsCardsComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
