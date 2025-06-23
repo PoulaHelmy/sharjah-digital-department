@@ -1,104 +1,161 @@
-// Import Bootstrap variables to use them in our custom styles
 @import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
 @import "bootstrap/scss/variables";
 
+.scope-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-.initiatives-section {
-  background-color: var(--bs-light-gray);
-  padding: 3.75rem;
-  border-radius: var(--corner-5);
-
-  .section-subtitle {
-    color: $gray-600;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+  // Header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
-  .section-title {
-    font-weight: 700;
-    color: $gray-800;
+  &__info {
+    flex: 1 1 auto;
   }
-}
 
-// Custom styling for the Bootstrap accordion
-.accordion {
-  // Remove the default outer border of the accordion
-  --bs-accordion-border-width: 0;
-
-  .accordion-item {
-    border-bottom: 1px solid $gray-200 !important; // Use !important to override Bootstrap
-
-    &:first-of-type {
-      border-top: 1px solid $gray-200 !important;
+  &__description {
+    font-size: 14px;
+    max-width: 50%;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
     }
   }
 
-  .accordion-header {
-    .accordion-button {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: $gray-800;
-      padding: 1.5rem 1rem;
-
-      // When the accordion item is collapsed (default state)
-      &:not(.collapsed) {
-        background-color: transparent;
-        box-shadow: none;
-        color: $primary; // Active color
-      }
-
-      // When the accordion item is open
-      &.collapsed {
-        background-color: transparent;
-      }
-
-      // Remove the default box-shadow on focus
-      &:focus {
-        box-shadow: none;
-        border-color: rgba(0, 0, 0, .125);
-      }
-
-      // Custom chevron icon styles
-      &::after {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-inline-start: auto;
-        content: "";
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236c757d'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-size: 1.5rem;
-        transition: transform .2s ease-in-out;
-      }
-
-      &:not(.collapsed)::after {
-        // Point the chevron up when the item is open
-        transform: rotate(-180deg);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-      }
-
-      .item-number {
-        margin-inline-end: 1rem;
-        color: $gray-500;
-        font-weight: 700;
-      }
-    }
-  }
-
-  .accordion-body {
-    padding: 0 1rem 1.5rem 3.5rem; // Align body text with title
-    color: $gray-600;
-    line-height: 1.7;
-  }
-}
-
-// Styling for the image on the right
-.initiative-image {
-  img {
-    border-radius: 1.5rem; // Rounded corners
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+    justify-content: flex-end;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+  }
+
+  // Wrapper & container
+  &__wrapper {
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: grab;
+
+    &.active {
+      cursor: grabbing;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  // Card
+  &__card {
+    flex: 0 0 auto;
+    max-width: min(30%, 400px);
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-margin-inline: 1rem;
+    border-radius: 20px;
+    padding: 38px;
+    position: relative;
+    border: 1px solid #AAB0BC;
+    transition: border-color 0.3s ease;
+    user-select: none;
+
+    @include media-breakpoint-down(md) {
+      max-width: 90%;
+    }
+
+    &:hover {
+      border-color: var(--bs-green);
+
+      .scope-slider__text h5 {
+        color: var(--bs-dark-gray-4);
+      }
+
+      .scope-slider__icon span::before {
+        color: var(--bs-green);
+      }
+
+      .scope-slider__number {
+        color: var(--bs-green);
+      }
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 4rem;
+  }
+
+  // Text
+  &__text {
+    text-align: start;
+
+    h5 {
+      font-size: 26px;
+      color: #343F52;
+      margin: 0;
+      font-weight: 800;
+      max-width: 90%;
+    }
+
+    p {
+      font-size: 14px;
+      color: #AAB0BC;
+      margin: 0;
+    }
+  }
+
+  // Icon
+  &__icon {
+    span {
+      font-size: 157px;
+      display: inline-block;
+
+      &::before {
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  // Number
+  &__number {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 28px;
+    color: #DDDFE4;
+    transition: color 0.3s ease;
+  }
+
+  // Arrows
+  &__arrow {
+    background: #DDDFE480;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+      color: var(--bs-dark-gray-2);
+    }
   }
 }

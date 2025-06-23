@@ -1,1 +1,39 @@
-our scope
+<section class="scope-slider">
+  <div class="scope-slider__header">
+    <div class="scope-slider__info">
+      <h2 class="section__title">{{ 'scope.sectionTitle' | translate }}</h2>
+      <h3 class="section__subtitle">{{ 'scope.title' | translate }}</h3>
+      <p class="scope-slider__description">{{ 'scope.description' | translate }}</p>
+    </div>
+    <div class="scope-slider__actions">
+      <button (click)="scrollLeftClick()" class="scope-slider__arrow">
+        <span class="icon-arrow-left-1"></span>
+      </button>
+      <button (click)="scrollRightClick()" class="scope-slider__arrow">
+        <span class="icon-arrow-right"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="scope-slider__wrapper">
+    <div #slider class="scope-slider__container">
+      @for (card of [1, 2, 3, 4]; track card; let i = $index) {
+        <div class="scope-slider__card">
+          <div class="scope-slider__card-content">
+            <div class="scope-slider__text">
+              <h5>{{ 'scope.slide' + card + '.title' | translate }}</h5>
+              <p>{{ 'scope.slide' + card + '.description' | translate }}</p>
+            </div>
+            <div class="scope-slider__icon">
+              <span [class]="'icon-slide-' + card">
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </span>
+            </div>
+          </div>
+          <div class="scope-slider__number">{{ formatIndex(i + 1) }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
