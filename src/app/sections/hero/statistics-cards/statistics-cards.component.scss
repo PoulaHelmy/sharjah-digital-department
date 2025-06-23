@@ -98,9 +98,13 @@
     }
 
     &-number {
-      font-size: 96px;
+      //font-size: 96px;
+      //font-weight: 800;
+      //line-height: 96px;
+      //margin: 0;
+      font-size: 86px;
       font-weight: 800;
-      line-height: 96px;
+      line-height: 75px;
       margin: 0;
     }
 
@@ -154,4 +158,5 @@
       }
     }
   }
+
 }

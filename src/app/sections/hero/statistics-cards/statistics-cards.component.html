@@ -30,7 +30,7 @@
 </div>
 
 @for (item of [1, 2, 4]; track item; let i = $index; let last = $last) {
-  <div class="stats__container fade-up stats__container--card-{{item}}"
+  <div class="stats__container stats__container--card-{{item}}"
        [class.stats__card--not-rotated]="selectedIndex === 2"
        [class.d-block]="selectedIndex === item"
        [class.d-none]="selectedIndex !== item">
