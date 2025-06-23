@@ -123,6 +123,8 @@
 
   // Icon
   &__icon {
+    direction: ltr;
+
     span {
       font-size: 157px;
       display: inline-block;
@@ -137,7 +139,7 @@
   &__number {
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    inset-inline-end: 2rem;
     font-size: 28px;
     color: #DDDFE4;
     transition: color 0.3s ease;
