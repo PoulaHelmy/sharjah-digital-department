@@ -105,23 +105,21 @@
     "sectionTitle": "Our Scope",
     "title": "Sustainable Digital Future",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "items": {
-      "g2g": {
-        "title": "Government to Government Solutions",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      },
-      "g2c": {
-        "title": "Government to Users Solutions",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      },
-      "cybersecurity": {
-        "title": "Safeguard and Cybersecurity",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      },
-      "ai": {
-        "title": "AI and Machine Learning",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      }
+    "slide1": {
+      "title": "Government to Government Solutions",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "slide2": {
+      "title": "Government to Users Solutions",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "slide3": {
+      "title": "Safeguard and Cybersecurity",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "slide4": {
+      "title": "AI and Machine Learning",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     }
   },
   "vision": {
